@@ -39,8 +39,8 @@
             }
 
             else{
-                $sql = $connection->prepare("INSERT INTO users (Email,Password) VALUES (:email,:pass)");
-                $cmd = $sql->execute(['email' => $Email,'pass' => $Pass]);
+                $sql = $connection->prepare("INSERT INTO users (Name,Enroll,Email,Password) VALUES (:name,:enroll,:email,:pass)");
+                $cmd = $sql->execute(['name' => $Name , 'enroll' => $Enroll, 'email' => $Email,'pass' => $Pass]);
 
                 if($cmd){
                       echo '<script language="javascript"> alert("Succesfully Registered , You can login now") </script>' ; 
